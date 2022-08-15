@@ -1,14 +1,27 @@
 //Welcome message!
 confirm("Welcome to the password generator; Krypton Encryption!")
 
+confirm("Please click the red 'Generate Password' button.")
+
 document.querySelector('#generate').addEventListener('click', promptMe);
 
 function promptMe() {
-    var userLowerCase = prompt("Please pick a password length more than 8 and less than 14.");
-    alert ("You picked: " + userLowerCase + "!");
+    var passwordLength = Number(window.prompt
+        ("Please pick a password length more than 8 and less than 14.",""));
+    alert ("You picked: " + passwordLength + "!");
 }
 
-console.log (userLowerCase);
+document.querySelector('#generate').addEventListener('click', promptMe2);
+
+function promptMe2() {
+    var lowerCase = String(window.prompt
+        ("Do you want to include lowercase letters?",""));
+    alert ("You picked: " + lowerCase + "!");
+
+    }
+
+
+
 // I used this site as a reference: https://stackoverflow.com/questions/37287093/starting-a-javascript-prompt-after-a-button-is-clicked.
 
 //Picking password length
