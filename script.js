@@ -1,22 +1,27 @@
+confirm("Welcome to the password generator; Krypton Encryption!")
+
+
+
 var password=document.getElementById("password");
 var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var globalPasswordLength = 12;
+var globalPasswordLength = Number(prompt("Please pick a password length more than 8 and less than 128.",""));
 var password = "";
 
 //idea for variables came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
 
 //Welcome message!
-confirm("Welcome to the password generator; Krypton Encryption!")
+
 
 confirm("Please click the red 'Generate Password' button that appears next.")
 
-document.querySelector('#generate').addEventListener('click', promptMe);
+/*document.querySelector('#generate').addEventListener('click', promptMe);
 
 function promptMe() {
     var passwordLength = Number(window.prompt
         ("Please pick a password length more than 8 and less than 14.",""));
     alert ("You picked: " + passwordLength + "!");
 }
+*/
 
 document.querySelector('#generate').addEventListener('click', promptMe2);
 
@@ -52,18 +57,13 @@ function promptMe5() {
     alert ("You picked: " + special + "!");
     confirm("Now we will generate your personal password below!")
     
-    for (var i = 0; i <= globalPasswordLength; i++) {
+    for (var i = 1; i <= globalPasswordLength; i++) {
         var randomNumber = Math.floor(Math.random() * chars.length);
         password += chars.substring(randomNumber, randomNumber +1);
        }
     
        document.getElementById("password").value = password;
-
-
-
-
-
-
+//Concept for the for loop came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
 
 
 }             
@@ -76,7 +76,6 @@ function promptMe5() {
 
    document.getElementById("password").value = password;
 
-//Concept for the for loop came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
 
 
 
