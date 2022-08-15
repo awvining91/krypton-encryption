@@ -43,9 +43,9 @@ function promptMe5() {
      var special = String(window.prompt
         ("Do you want to include special characters?",""));
     alert ("You picked: " + special + "!");
-            
+    confirm("Please click the red 'Generate Password' button below to generate your personal password!")     
 }             
- 
+
 
 
 // I used this site as a reference: https://stackoverflow.com/questions/37287093/starting-a-javascript-prompt-after-a-button-is-clicked.
