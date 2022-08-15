@@ -29,6 +29,14 @@ function promptMe2() {
     
         }
 
+        document.querySelector('#generate').addEventListener('click', promptMe4);
+
+        function promptMe4() {
+            var numbers = String(window.prompt
+                ("Do you want to include numbers?",""));
+            alert ("You picked: " + numbers + "!");
+        
+            }   
 // I used this site as a reference: https://stackoverflow.com/questions/37287093/starting-a-javascript-prompt-after-a-button-is-clicked.
 
 //Picking password length
