@@ -1,7 +1,7 @@
 //Welcome message!
 confirm("Welcome to the password generator; Krypton Encryption!")
 
-confirm("Please click the red 'Generate Password' button.")
+confirm("Please click the red 'Generate Password' button that appears next.")
 
 document.querySelector('#generate').addEventListener('click', promptMe);
 
@@ -20,7 +20,14 @@ function promptMe2() {
 
     }
 
+    document.querySelector('#generate').addEventListener('click', promptMe3);
 
+    function promptMe3() {
+        var upperCase = String(window.prompt
+            ("Do you want to include uppercase letters?",""));
+        alert ("You picked: " + upperCase + "!");
+    
+        }
 
 // I used this site as a reference: https://stackoverflow.com/questions/37287093/starting-a-javascript-prompt-after-a-button-is-clicked.
 
