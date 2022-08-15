@@ -1,3 +1,10 @@
+var password=document.getElementById("password");
+var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var globalPasswordLength = 12;
+var password = "";
+
+//idea for variables came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
+
 //Welcome message!
 confirm("Welcome to the password generator; Krypton Encryption!")
 
@@ -43,8 +50,36 @@ function promptMe5() {
      var special = String(window.prompt
         ("Do you want to include special characters?",""));
     alert ("You picked: " + special + "!");
-    confirm("Please click the red 'Generate Password' button below to generate your personal password!")     
+    confirm("Now we will generate your personal password below!")
+    
+    for (var i = 0; i <= globalPasswordLength; i++) {
+        var randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber, randomNumber +1);
+       }
+    
+       document.getElementById("password").value = password;
+
+
+
+
+
+
+
+
 }             
+
+//To generate random items:
+/*for (var i = 0; i <= passwordLength; i++) {
+    var randomNumber = Math.floor(Math.random() * chars.length);
+    password += chars.substring(randomNumber, randomNumber +1);
+   }
+
+   document.getElementById("password").value = password;
+
+//Concept for the for loop came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
+
+
+
 
 
 
