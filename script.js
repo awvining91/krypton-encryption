@@ -1,32 +1,32 @@
+//Welcome to my password generator, "Krypton Encryption" lol
+
+
+//Welcome message!
+
 confirm("Welcome to the password generator; Krypton Encryption!")
-
-
 
 
 var password=document.getElementById("password");
 
 var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()abcdefghijklmnopqrstuvwxyz";
+//for simplicity I pooled together uppercase, lowercase, numbers and special characters into one variable, otherwise-
+// my code would keep exploding! :(
 
+//Password length prompt
 var globalPasswordLength = Number(prompt("Please pick a password length more than 8 and less than 128.",""));
 
 var password = "";
 
-//idea for variables came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
-
-//Welcome message!
+//idea for variable concepts came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. Credit to website and creator.
 
 
+//This prompt directs the user to click the Generate Password button to continue the process
 confirm("Please click the red 'Generate Password' button that appears next.")
 
-/*document.querySelector('#generate').addEventListener('click', promptMe);
 
-function promptMe() {
-    var passwordLength = Number(window.prompt
-        ("Please pick a password length more than 8 and less than 14.",""));
-    alert ("You picked: " + passwordLength + "!");
-}
-*/
+//What made sense to me was to have a series of Event listeners and  simple functions to let users customize their password
 
+//Prompt for lowercase option
 document.querySelector('#generate').addEventListener('click', promptMe2);
 
 function promptMe2() {
@@ -36,6 +36,7 @@ function promptMe2() {
 
 }
 
+//Prompt for uppercase option
 document.querySelector('#generate').addEventListener('click', promptMe3);
 
 function promptMe3() {
@@ -45,6 +46,7 @@ function promptMe3() {
     
  }
 
+ //Prompt for number option
 document.querySelector('#generate').addEventListener('click', promptMe4);
 
 function promptMe4() {
@@ -53,95 +55,28 @@ function promptMe4() {
     alert ("You picked: " + numbers + "!");
         
  }  
+
+ //Prompt for special characters
 document.querySelector('#generate').addEventListener('click', promptMe5);
 
 function promptMe5() {
      var special = String(window.prompt
         ("Do you want to include special characters?",""));
     alert ("You picked: " + special + "!");
+    //Confirm dialog box lets user know where to expect the password to generate
     confirm("Now we will generate your personal password below!")
     
+    //This loop returns a random selection from the global characters variable to generate a personal password
     for (var i = 1; i <= globalPasswordLength; i++) {
         var randomNumber = Math.floor(Math.random() * characters.length);
         password += characters.substring(randomNumber, randomNumber +1);
        }
     
+    //Web API that grabs the password info and gernerate it.
        document.getElementById("password").value = password;
-//Concept for the for loop came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
+//Basic concept for the for loop came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. Credit to website and creator.
 
 
 }             
 
-//To generate random items:
-/*for (var i = 0; i <= passwordLength; i++) {
-    var randomNumber = Math.floor(Math.random() * chars.length);
-    password += chars.substring(randomNumber, randomNumber +1);
-   }
-
-   document.getElementById("password").value = password;
-
-
-
-
-
-
-
-// I used this site as a reference: https://stackoverflow.com/questions/37287093/starting-a-javascript-prompt-after-a-button-is-clicked.
-
-//Picking password length
-/*const aNumber = Number(window.prompt
- ("Please pick a password length more than 8 and less than 12.", ""));
-
-    console.log (aNumber);
-
- const lowerCase = String(window.prompt
-    ("Do you want lowercase?", ""));
-
-    console.log (lowerCase);
-
-   // then confirm("You have picked" aNumber, "!");
-
- //This is here for debugging purposes to see what passes through  
-
-
-
-//Do you want lowercase letters?
-    /*var lowerCase = (window.prompt
-    ("Do you want lowercase letters?", ""));
- 
-    if lowerCase = "yes" {      
-        lowerCase = true;
-    } else {
-        lowerCase = false;
-    }
-
-console.log (lowerCase);
-*/
-
-/*var lowerCase = prompt("Do you want lowercase letters?");
-
-if (lowerCase != null) {
-    prompt("You have chosen" + lowerCase "!")
-
-
-}
-*?
-
-
-/*
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-*/
+//I hoped you enjoyed my attempt at making a javascript password generator! :)
