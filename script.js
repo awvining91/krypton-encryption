@@ -76,7 +76,12 @@ function promptMe5() {
        document.getElementById("password").value = password;
 //Basic concept for the for loop came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. Credit to website and creator.
 
-
+           
 }             
+
+
+
+//Note Be Sure to refresh the page immediately after clicking on the link!
+
 
 //I hoped you enjoyed my attempt at making a javascript password generator! :)
