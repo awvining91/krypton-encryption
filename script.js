@@ -2,9 +2,13 @@ confirm("Welcome to the password generator; Krypton Encryption!")
 
 
 
+
 var password=document.getElementById("password");
-var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()abcdefghijklmnopqrstuvwxyz";
+
 var globalPasswordLength = Number(prompt("Please pick a password length more than 8 and less than 128.",""));
+
 var password = "";
 
 //idea for variables came from https://dev.to/code_mystery/random-password-generator-using-javascript-6a. All credit to website and creator.
@@ -58,8 +62,8 @@ function promptMe5() {
     confirm("Now we will generate your personal password below!")
     
     for (var i = 1; i <= globalPasswordLength; i++) {
-        var randomNumber = Math.floor(Math.random() * chars.length);
-        password += chars.substring(randomNumber, randomNumber +1);
+        var randomNumber = Math.floor(Math.random() * characters.length);
+        password += characters.substring(randomNumber, randomNumber +1);
        }
     
        document.getElementById("password").value = password;
